@@ -126,7 +126,6 @@ class AIMLParser(object):
         start = datetime.datetime.now()
         total_aimls_loaded = 0
         for file in configuration.files.aiml_files.files:
-            print("-----------file ",file)
             aimls_loaded = self._aiml_loader.load_dir_contents(file,
                                                                configuration.files.aiml_files.directories,
                                                                configuration.files.aiml_files.extension)
@@ -455,7 +454,7 @@ class AIMLParser(object):
         that_sentence = Sentence(client_context.brain.tokenizer, that_pattern)
         YLogger.debug(client_context, "AIML Parser matching sentence [%s], topic=[%s], that=[%s] ",
                           pattern_sentence.text(), topic_pattern, that_pattern)
-        print("6. pattern _________________ : ",pattern_sentence.text(), topic_pattern, that_pattern)
+
         sentence = Sentence(client_context.brain.tokenizer)
         sentence.append_sentence(pattern_sentence)
         sentence.append_word('__TOPIC__')
@@ -463,7 +462,6 @@ class AIMLParser(object):
         sentence.append_word('__THAT__')
         sentence.append_sentence(that_sentence)
 
-        print("6. sentence(aiml_parser.py) : ",sentence.words_from_current_pos(0))
         YLogger.debug(client_context, "Matching [%s]", sentence.words_from_current_pos(0))
 
         context = MatchContext(max_search_depth=client_context.bot.configuration.max_search_depth,
@@ -471,7 +469,7 @@ class AIMLParser(object):
                                tokenizer=client_context.brain.tokenizer)
 
         template = self._pattern_parser._root_node.match(client_context, context, sentence)
-        print("6. template : ",template)
+
         if template is not None:
             context._template_node = template
 
@@ -479,7 +477,7 @@ class AIMLParser(object):
 
             # Save the matched context for the associated sentence
             pattern_sentence.matched_context = context
-            print("6. context : ",pattern_sentence.matched_context)
+
             return context
 
         return None

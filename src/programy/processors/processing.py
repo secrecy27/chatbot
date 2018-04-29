@@ -31,13 +31,11 @@ class ProcessorLoader(ClassLoader):
         count = 0
         try:
             with open(filename, "r", encoding="utf-8") as file:
-                print("filename : ",filename)
                 for line in file:
                     line = line.strip()
                     if line:
                         if line[0] != '#':
                             new_class = ClassLoader.instantiate_class(line)
-                            print("new_class : ",new_class)
                             if new_class is not None:
                                 self.processors.append(new_class(*args, **kw))
                                 count += 1
@@ -48,7 +46,6 @@ class ProcessorLoader(ClassLoader):
     def process(self, client_context, string):
         for processor in self.processors:
             string = processor.process(client_context, string)
-        print("String ", string)
         return string
 
 

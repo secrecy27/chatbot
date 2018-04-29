@@ -23,6 +23,7 @@ training_data.append({"class":"sandwich", "sentence":"make me a sandwich"})
 training_data.append({"class":"sandwich", "sentence":"can you make a sandwich?"})
 training_data.append({"class":"sandwich", "sentence":"having a sandwich today?"})
 training_data.append({"class":"sandwich", "sentence":"what's for lunch?"})
+print("traing_data : ",training_data)
 print ("%s sentences of training data" % len(training_data))
 
 # capture unique stemmed words in the training corpus
@@ -114,7 +115,7 @@ def classify(sentence):
 
     return high_class+" "+sentence
 
-# print("start classify")
-# print("who are you score",classify("who are you?"))
-# print("sudo",classify("sudo make me a sandwich"))
-# print("doing",classify("how are you doing today?"))
+print("start classify")
+print("who are you score",classify("who are you?"))
+print("sudo",classify("sudo make me a sandwich"))
+print("doing",classify("how are you doing today?"))

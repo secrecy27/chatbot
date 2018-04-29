@@ -150,7 +150,6 @@ class Question(object):
         if text is not None and text.strip():
             self._sentences = []
             all_sentences = text.split(sentence_split_chars)
-            print("all_ sentences 긴 문장일 경우 여기",all_sentences)
             for each_sentence in all_sentences:
                 self._sentences.append(Sentence(tokenizer, each_sentence))
 

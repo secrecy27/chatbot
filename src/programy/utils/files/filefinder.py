@@ -52,7 +52,6 @@ class FileFinder(object):
     def load_dir_contents(self, paths, subdir=False, extension=".txt"):
 
         files = self.find_files(paths, subdir, extension)
-        print("load_dir_contents",files)
         collection = {}
         for file in files:
             # file = y-bot.aiml파일,rdf, sets,maps 파일

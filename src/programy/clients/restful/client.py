@@ -19,7 +19,7 @@ from abc import ABCMeta, abstractmethod
 
 from programy.clients.client import BotClient
 from programy.clients.restful.config import RestConfiguration
-
+from programy.clients.restful.classification import Naive_bayes
 
 class RestBotClient(BotClient):
     __metaclass__ = ABCMeta
@@ -99,8 +99,20 @@ class RestBotClient(BotClient):
             if response is not None:
                 return response, status
 
+
             question = self.get_question(request)
-            print("naive bayes추가 : ",question)
+
+            # Naiver bayes
+            n=Naive_bayes()
+            high_class,high_score =n.classify(question)
+            print("question : ",question," class : ",high_class, " score : ",high_score)
+
+            if high_class=="greeting" and high_score>0:
+                question=high_class
+            elif high_class=="order" and high_score>0:
+                question="order "+question
+
+
             # userid = self.get_userid(request)
 
             answer = self.ask_question(userid, question)

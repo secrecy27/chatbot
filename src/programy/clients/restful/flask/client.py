@@ -52,8 +52,6 @@ class FlaskRestBotClient(RestBotClient):
     def create_response(self, response_data, status):
         if self.configuration.client_configuration.debug is True:
             self.dump_request(response_data)
-        # bot 만들고 컨피규레이션
-        print("response_data : ", response_data)
         return make_response(jsonify({'response': response_data}, status))
 
     def run(self, flask):
@@ -93,8 +91,6 @@ if __name__ == '__main__':
     @APP.route('/api/rest/v1.0/ask', methods=['GET'])
     def ask():
         response_data, status = REST_CLIENT.process_request(request)
-        print("1. response_data (flask/client.py) : ", response_data)
-        print()
         return REST_CLIENT.create_response(response_data, status)
 
     print("Loading, please wait...")

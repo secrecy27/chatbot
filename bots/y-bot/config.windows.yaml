@@ -33,7 +33,7 @@ brain:
 
     files:
         aiml:
-            #files: $BOT_ROOT\aiml\chatbot.aiml
+            #files: $BOT_ROOT\aiml\_template.aiml
             files: $BOT_ROOT\aiml
             extension: .aiml
             directories: true

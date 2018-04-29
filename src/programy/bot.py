@@ -321,7 +321,6 @@ class Bot(object):
     def post_process_response(self, client_context, response, srai):
         if srai is False:
             answer = client_context.brain.post_process_response(client_context, response).strip()
-            print("answer : ", answer)
             if not answer:
                 answer = self.get_default_response(client_context)
         else:
@@ -342,11 +341,11 @@ class Bot(object):
         client_context.mark_question_start(text)
 
         pre_processed = self.pre_process_text(client_context, text, srai)
-        print("2. pre_processed(bot.py) : ",pre_processed)
+
         question = self.get_question(client_context, pre_processed, srai)
-        print("2. question(bot.py) : ",question)
+
         conversation = self.get_conversation(client_context)
-        print("2. conversation(bot.py) : ",conversation)
+
         conversation.record_dialog(question)
 
         answers = []
@@ -355,11 +354,9 @@ class Bot(object):
         for sentence in question.sentences:
             question.set_current_sentence_no(sentence_no)
             answer = self.process_sentence(client_context, sentence, srai, responselogger)
-            print("3. answer(bot.py) : ", answer)
             answers.append(answer)
             sentence_no += 1
 
-        print("answers ", answers)
         client_context.reset_question()
 
         if srai is True:
@@ -386,7 +383,6 @@ class Bot(object):
             self.check_spelling_before(sentence)
 
         response = client_context.brain.ask_question(client_context, sentence)
-        print("4. response(bot.py) : ",response)
         if response is None and srai is False:
             response = self.check_spelling_and_retry(client_context, sentence)
 
