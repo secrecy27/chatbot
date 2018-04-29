@@ -28,10 +28,48 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		</template>
 	</category>
 	<category>
-	    <pattern>[goodbye]bye</pattern>
+	    <pattern>class1</pattern>
+	    <template>
+	    hello
+	    <srai>hi</srai>
+	    </template>
+	</category>
+	<category>
+	    <pattern>hi</pattern>
+	    <template>
+	    hello
+	    </template>
+	</category>
+	<category>
+	    <pattern>nice to meet you</pattern>
+	    <template>
+	    hello
+	    </template>
+	</category>
+	<category>
+	    <pattern>hiya</pattern>
+	    <template>
+	    hello
+	    </template>
+	</category>
+	<category>
+	    <pattern>h</pattern>
 	    <template>
 	    wow hi!!!
 	    </template>
 	</category>
+	<category>
+	    <pattern>a</pattern>
+	    <template>
+	    aaaaaaaaa
+	    </template>
+	</category>
+	<category>
+	    <pattern>bye</pattern>
+	    <template>
+	    byebyebye
+	    </template>
+	</category>
+
 
 </aiml>

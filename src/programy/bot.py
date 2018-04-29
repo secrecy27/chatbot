@@ -17,7 +17,6 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 import logging
 
 from programy.utils.logging.ylogger import YLogger
-
 from programy.brain import Brain
 from programy.dialog.dialog import Conversation, Question, Sentence
 from programy.dialog.storage.factory import ConversationStorageFactory
@@ -336,7 +335,6 @@ class Bot(object):
             responselogger.log_response(text, answer)
 
     def ask_question(self, client_context, text, srai=False, responselogger=None):
-
         if srai is False:
             client_context.bot = self
             client_context.brain = client_context.bot.brain
@@ -344,19 +342,20 @@ class Bot(object):
         client_context.mark_question_start(text)
 
         pre_processed = self.pre_process_text(client_context, text, srai)
-
+        print("2. pre_processed(bot.py) : ",pre_processed)
         question = self.get_question(client_context, pre_processed, srai)
-
+        print("2. question(bot.py) : ",question)
         conversation = self.get_conversation(client_context)
-
+        print("2. conversation(bot.py) : ",conversation)
         conversation.record_dialog(question)
 
         answers = []
         sentence_no = 0
+
         for sentence in question.sentences:
             question.set_current_sentence_no(sentence_no)
             answer = self.process_sentence(client_context, sentence, srai, responselogger)
-            print("answer : ", answer)
+            print("3. answer(bot.py) : ", answer)
             answers.append(answer)
             sentence_no += 1
 
@@ -387,7 +386,7 @@ class Bot(object):
             self.check_spelling_before(sentence)
 
         response = client_context.brain.ask_question(client_context, sentence)
-        print("bot response ; ",response)
+        print("4. response(bot.py) : ",response)
         if response is None and srai is False:
             response = self.check_spelling_and_retry(client_context, sentence)
 

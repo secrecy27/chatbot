@@ -20,6 +20,7 @@ from abc import ABCMeta, abstractmethod
 from programy.clients.client import BotClient
 from programy.clients.restful.config import RestConfiguration
 
+
 class RestBotClient(BotClient):
     __metaclass__ = ABCMeta
 
@@ -99,6 +100,7 @@ class RestBotClient(BotClient):
                 return response, status
 
             question = self.get_question(request)
+            print("naive bayes추가 : ",question)
             # userid = self.get_userid(request)
 
             answer = self.ask_question(userid, question)

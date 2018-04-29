@@ -45,6 +45,7 @@ class TemplateNode(object):
 
     def resolve_children_to_string(self, client_context):
         words = [child.resolve(client_context) for child in self._children]
+        print("_________________________________words ++++++++++++++++++++++++++",words)
         return client_context.brain.tokenizer.words_to_texts(words)
 
     def resolve(self, client_context):

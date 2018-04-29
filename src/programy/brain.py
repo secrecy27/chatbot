@@ -493,6 +493,7 @@ class Brain(object):
         YLogger.debug(client_context, "AIML Parser evaluating template [%s]", template_node.to_string())
 
         response = template_node.template.resolve(client_context)
+        print("7. response : ",response)
 
         if "<oob>" in response:
             response, oob = self.strip_oob(response)
@@ -509,18 +510,19 @@ class Brain(object):
         authenticated = self.authenticate_user(client_context)
         if authenticated is not None:
             return authenticated
-
+        print("5.client_context(brain.py) : ",client_context)
         conversation = client_context.bot.get_conversation(client_context)
-        print("brain conversation : ",conversation)
+        print("5.brain conversation(brain.py) : ",conversation)
         topic_pattern = conversation.get_topic_pattern(client_context)
-        print("brain topic_patter : ", topic_pattern)
+        print("5.brain topic_pattern : ", topic_pattern)
         that_pattern = conversation.get_that_pattern(client_context)
-        print("brain that_patter : ", that_pattern)
+        print("5.brain that_pattern : ", that_pattern)
+        print()
         match_context = self._aiml_parser.match_sentence(client_context,
                                                          sentence,
                                                          topic_pattern=topic_pattern,
                                                          that_pattern=that_pattern)
-        print("bran match_context : ", match_context)
+        print("5.brain match_context : ", match_context)
         if match_context is not None:
             return self.resolve_matched_template(client_context, match_context)
 

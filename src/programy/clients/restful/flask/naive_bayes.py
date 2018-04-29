@@ -1,5 +1,6 @@
 # use natural language toolkit
 import nltk
+# nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.stem.lancaster import LancasterStemmer
 # word stemmer
@@ -16,6 +17,7 @@ training_data.append({"class":"goodbye", "sentence":"have a nice day"})
 training_data.append({"class":"goodbye", "sentence":"see you later"})
 training_data.append({"class":"goodbye", "sentence":"have a nice day"})
 training_data.append({"class":"goodbye", "sentence":"talk to you soon"})
+training_data.append({"class":"goodbye", "sentence":"bye"})
 
 training_data.append({"class":"sandwich", "sentence":"make me a sandwich"})
 training_data.append({"class":"sandwich", "sentence":"can you make a sandwich?"})
@@ -110,9 +112,9 @@ def classify(sentence):
             high_class = c
             high_score = score
 
-    return high_class, high_score
+    return high_class+" "+sentence
 
-print("start classify")
-print("who are you score",classify("who are you?"))
-print("sudo",classify("sudo make me a sandwich"))
-print("doing",classify("how are you doing today?"))
+# print("start classify")
+# print("who are you score",classify("who are you?"))
+# print("sudo",classify("sudo make me a sandwich"))
+# print("doing",classify("how are you doing today?"))
