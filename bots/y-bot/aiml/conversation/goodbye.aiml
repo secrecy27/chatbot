@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+    <category>
+        <pattern>goodbye</pattern>
+        <template>
+            <random>
+                <li>Thank you so much</li>
+                <li>Thank you for coming. Have a good one! Bye</li>
+                <li>Thank you. see you again</li>
+                <li>Goodbye</li>
+                <li>Have a nice day</li>
+                <li>Have a good day</li>
+                <li>Visit us again, please</li>
+                <li>We hope to have you again</li>
+            </random>
+        </template>
+    </category>
+
+
+</aiml>

@@ -3,12 +3,13 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 import os
 
+
 class Naive_bayes():
 
     def __init__(self):
         self.stemmer = LancasterStemmer()
         self.training_data = []
-        self.base_path="../../../conversation/"
+        self.base_path = "../../../conversation/"
 
         # 파일 읽어들임
         for filename in os.listdir(self.base_path):
@@ -21,15 +22,12 @@ class Naive_bayes():
             self.class_words[c] = []
         self.extract_data()
 
-
-    def read_data(self,filename):
-        with open(self.base_path+filename,encoding="utf-8") as f:
+    def read_data(self, filename):
+        with open(self.base_path + filename, encoding="utf-8") as f:
             while True:
-                line=f.readline().strip()
+                line = f.readline().strip()
                 if not line: break
-                self.training_data.append({"class":filename,"sentence":line})
-
-
+                self.training_data.append({"class": filename, "sentence": line})
 
     def extract_data(self):
         for data in self.training_data:
@@ -48,8 +46,6 @@ class Naive_bayes():
                     # class list에 단어 추가
                     self.class_words[data['class']].extend([stemmed_word])
 
-
-
     def calculate_class_score_commonality(self, sentence, class_name, show_details=True):
         score = 0
         # 새로운 문장에서 단어를 각각 토큰화
@@ -63,7 +59,6 @@ class Naive_bayes():
                     print("   match: %s (%s)" % (
                         self.stemmer.stem(word.lower()), 1 / self.corpus_words[self.stemmer.stem(word.lower())]))
         return score
-
 
     def classify(self, sentence):
         high_class = None

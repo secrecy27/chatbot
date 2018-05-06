@@ -2,10 +2,11 @@
 <aiml>
 
     <category>
-        <pattern>order *</pattern>
+        <pattern>order</pattern>
         <template>
-            okaaaaaaaay <star/>
+            okay, give me some seconds please
         </template>
     </category>
+
 
 </aiml>
