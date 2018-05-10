@@ -113,6 +113,8 @@ class RestBotClient(BotClient):
                 question=high_class
             elif high_class=="goodbye" and high_score>0:
                 question=high_class
+            elif high_class=="recommend" and high_score>0:
+                question=high_class
 
 
             # userid = self.get_userid(request)

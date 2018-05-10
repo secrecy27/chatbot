@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+    <category>
+        <pattern>recommend</pattern>
+        <template>
+            <random>
+                <li>All our sushi are delicious</li>
+                <li>It's all delicious.</li>
+                <li>If you ask the staff, you'll know more.</li>
+            </random>
+        </template>
+    </category>
+
+
+</aiml>

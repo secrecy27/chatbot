@@ -5,18 +5,16 @@
         <pattern>greeting</pattern>
         <template>
             <random>
-                <li>Hello!!!!</li>
-                <li>Hi there!!!!!</li>
-                <li>Greetings!!!!!!!!</li>
-                <li>Hiya!!!!!!</li>
+                <li>Hello! I am sushi bot</li>
+                <li>Hi! I am sushi bot</li>
                 <li>
                     <think><set name="dayphase"><srai>DAY PHASE</srai></set></think>
                     <condition name="dayphase">
-                        <li value="Morning">Good morning!!!!!!</li>
-                        <li value="Noon">Good afternoon!!!!!!</li>
-                        <li value="Afternoon">Good afternoon!!!!!!</li>
-                        <li value="Night">Good evening!!!!!!</li>
-                        <li>Hello!!!!!!!!</li>
+                        <li value="Morning">Good morning!</li>
+                        <li value="Noon">Good afternoon!</li>
+                        <li value="Afternoon">Good afternoon!</li>
+                        <li value="Night">Good evening!</li>
+                        <li>Hello! I am sushi bot</li>
                     </condition>
                 </li>
             </random>

@@ -4,7 +4,11 @@
     <category>
         <pattern>order</pattern>
         <template>
-            okay, give me some seconds please
+            <random>
+                <li>okay, give me some seconds please</li>
+                <li>okay, I'll get it</li>
+                <li>sure, would you like anything else?</li>
+            </random>
         </template>
     </category>
 
