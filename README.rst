@@ -25,14 +25,14 @@ Tutorial
      aiml 작성 시에 high_class에서 반환되어지는 값을 pattern에 입력하여야 답변이 가능합니다.
      aiml 작성 관련 내용은 `https://www.tutorialspoint.com/aiml/index.htm`_ 참고하시면 됩니다.
 
-  실행
-  - Mac OSX
-    chatbot/bots/y-bot/y-bot-flask-rest.sh를 이용하여 실행이 가능합니다.
+ 실행
+ - Mac OSX
+   chatbot/bots/y-bot/y-bot-flask-rest.sh를 이용하여 실행이 가능합니다.
 
-  - Windows
-    Pycharm IDE를 통하여 구동가능하며, 구동시 chatbot/src를 source root로 지정하여야 합니다.
-    chatbot/src/programy/clients/restful/flask/client.py를 실행시킨 후
-    브라우저에 localhost:8989/api/rest/v1.0/ask?question=질문내용 으로 실행가능합니다.
+ - Windows
+   Pycharm IDE를 통하여 구동가능하며, 구동시 chatbot/src를 source root로 지정하여야 합니다.
+   chatbot/src/programy/clients/restful/flask/client.py를 실행시킨 후
+   브라우저에 localhost:8989/api/rest/v1.0/ask?question=질문내용 으로 실행가능합니다.
 
 
 
