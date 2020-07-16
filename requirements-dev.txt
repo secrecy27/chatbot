@@ -1,4 +1,4 @@
-requests==2.18.1
+requests==2.20.0
 Flask==0.12.2
 python-dateutil==2.6.1
 beautifulsoup4==4.6.0
