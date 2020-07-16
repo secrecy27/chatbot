@@ -1,6 +1,6 @@
 Introduction
 ------------
-Program Y를 사용한 rule base 챗봇입니다.
+Program Y를 사용한 rule base chatbot 입니다.
 Program Y에 관한 사항은 `Program Y Wiki <https://github.com/keiffster/program-y/wiki>`_ 참고하시면 됩니다.
 Program Y에서 Y-Bot을 이용하였고 효과적인 문장 인식을 위하여 전통적인 텍스트 분류에 사용되어지는 나이브베이즈 분류를 이용하였습니다.
 인식하고자 하는 문장과 그에 해당하는 대답을 aiml파일로 작성시 손쉽게 해당 답변이 구현가능하며,
@@ -34,10 +34,3 @@ Tutorial
     - Pycharm IDE를 통하여 구동가능하며, 구동시 chatbot/src를 source root로 지정하여야 합니다.
     chatbot/src/programy/clients/restful/flask/client.py를 실행시킨 후
     브라우저에 localhost:8989/api/rest/v1.0/ask?question=질문내용 으로 실행가능합니다.
-
-
-
-
-
-
-
