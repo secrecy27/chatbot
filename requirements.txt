@@ -2,7 +2,7 @@ requests==2.18.1
 Flask==0.12.2
 python-dateutil==2.6.1
 beautifulsoup4==4.6.0
-lxml==3.8.0
+lxml==4.9.1
 wikipedia==1.4.0
 PyYAML==3.12
 tweepy==3.5.0
